@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{C8E15748-36BD-4D92-8215-C6ED31D1902F}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Calculadora.dproj">
+            <Dependencies>LibCalc.dproj</Dependencies>
+        </Projects>
+        <Projects Include="LibCalc.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Calculadora" DependsOnTargets="LibCalc">
+        <MSBuild Projects="Calculadora.dproj"/>
+    </Target>
+    <Target Name="Calculadora:Clean" DependsOnTargets="LibCalc:Clean">
+        <MSBuild Projects="Calculadora.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Calculadora:Make" DependsOnTargets="LibCalc:Make">
+        <MSBuild Projects="Calculadora.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="LibCalc">
+        <MSBuild Projects="LibCalc.dproj"/>
+    </Target>
+    <Target Name="LibCalc:Clean">
+        <MSBuild Projects="LibCalc.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LibCalc:Make">
+        <MSBuild Projects="LibCalc.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Calculadora;LibCalc"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Calculadora:Clean;LibCalc:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Calculadora:Make;LibCalc:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
