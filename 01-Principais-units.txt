@@ -1,0 +1,60 @@
+
+System
+	Inc
+	Pos
+	Round
+	Trunc
+	ParamStr
+	ParamCount
+	Delete
+	Randomize
+	Random
+	SetLength
+	Assigned
+
+System.SysUtils
+	Now
+	Date
+	Time
+	CurrentYear
+	IncMonth
+	BoolToStr
+	StrToBool
+	IntToStr
+	StrToInt
+	FloatToStr
+	StrToFloat
+	DateTimeToStr
+	StrToDateTime
+	FormatDateTime
+	DecodeDate
+	EncodeDate
+
+System.StrUtils
+	ReplaceStr
+	ContainsStr
+	ReverseString
+	PosEx
+	SplitString
+	IfThen
+
+System.DateUtils 
+	YearOf
+	MonthOf
+	WeekOf
+	DayOf
+	HourOf
+	MinuteOf
+	SecondOf
+
+System.Variants
+	VarToStr
+	VarToDateTime
+	VarType
+	VarIsNull
+
+Vcl.Dialogs
+	ShowMessage
+	MessageDlg
+	InputBox
+	InputQuery

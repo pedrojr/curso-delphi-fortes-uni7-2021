@@ -1,2 +1,3 @@
-# curso-delphi-fortes-uni7-2021
+## Curso Delphi Community Edition
+
 Exemplos do Curso Delphi Ministrado na UNI7 em parceria com a Fortes Tecnologia.
