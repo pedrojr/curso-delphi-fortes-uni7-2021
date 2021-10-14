@@ -31,12 +31,12 @@ type
 var
   FrmPrincipal: TFrmPrincipal;
 
-implementation
-
 function Somar(A, B: Double): Double; stdcall; external 'LibCalc.dll';
 function Subtrair(A, B: Double): Double; stdcall; external 'LibCalc.dll';
 function Multiplicar(A, B: Double): Double; stdcall; external 'LibCalc.dll';
 function Dividir(A, B: Double): Double; stdcall; external 'LibCalc.dll';
+
+implementation
 
 {$R *.dfm}
 
