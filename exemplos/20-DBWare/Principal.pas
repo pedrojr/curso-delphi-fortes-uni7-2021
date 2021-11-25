@@ -65,7 +65,8 @@ implementation
 
 uses
   Conexao, CadCargos, CadEventos,
-  CadFuncionarios, CadFuncionarios2, CadFuncionarios3;
+  CadFuncionarios, CadFuncionarios2,
+  CadFuncionarios3, CadFuncionarios4;
 
 {$R *.dfm}
 
@@ -95,9 +96,9 @@ end;
 
 procedure TFrmPrincipal.CadFuncionariosClick(Sender: TObject);
 begin
-  FrmFuncionarios := TFrmFuncionarios.Create(Self);
-  FrmFuncionarios.ShowModal;
-  FrmFuncionarios.Free;
+  FrmFuncionarios4 := TFrmFuncionarios4.Create(Self);
+  FrmFuncionarios4.ShowModal;
+  FrmFuncionarios4.Free;
 end;
 
 procedure TFrmPrincipal.SairClick(Sender: TObject);

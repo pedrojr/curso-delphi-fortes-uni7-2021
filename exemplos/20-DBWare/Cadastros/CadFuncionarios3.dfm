@@ -3,6 +3,7 @@ inherited FrmFuncionarios3: TFrmFuncionarios3
   PixelsPerInch = 96
   TextHeight = 13
   inherited PgcPrincipal: TPageControl
+    ActivePage = TabRegistro
     inherited TabLista: TTabSheet
       ExplicitLeft = 4
       ExplicitTop = 24
@@ -90,9 +91,27 @@ inherited FrmFuncionarios3: TFrmFuncionarios3
         DataSource = DtsMain
         TabOrder = 3
       end
+      object DBRadioGroup1: TDBRadioGroup
+        Left = 48
+        Top = 203
+        Width = 121
+        Height = 38
+        Caption = ' Ativo '
+        Columns = 2
+        DataField = 'ATIVO'
+        DataSource = DtsMain
+        Items.Strings = (
+          'Sim'
+          'N'#227'o')
+        TabOrder = 6
+        Values.Strings = (
+          '1'
+          '0')
+      end
     end
   end
   inherited QryMain: TFDQuery
+    OnCalcFields = QryMainCalcFields
     SQL.Strings = (
       'select * from funcionarios')
     object QryMainCODIGO: TIntegerField
@@ -115,6 +134,18 @@ inherited FrmFuncionarios3: TFrmFuncionarios3
     object QryMainCONTATO: TStringField
       FieldName = 'CONTATO'
       Origin = 'CONTATO'
+    end
+    object QryMainATIVO: TIntegerField
+      FieldName = 'ATIVO'
+      Origin = 'ATIVO'
+      Visible = False
+    end
+    object QryMainAtivoDesc: TStringField
+      DisplayLabel = 'Ativo'
+      FieldKind = fkCalculated
+      FieldName = 'AtivoDesc'
+      Size = 10
+      Calculated = True
     end
   end
   object QryCargos: TFDQuery

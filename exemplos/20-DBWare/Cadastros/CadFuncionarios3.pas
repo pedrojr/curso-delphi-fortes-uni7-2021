@@ -26,8 +26,12 @@ type
     Label3: TLabel;
     Label4: TLabel;
     EdtContato: TDBEdit;
+    QryMainATIVO: TIntegerField;
+    DBRadioGroup1: TDBRadioGroup;
+    QryMainAtivoDesc: TStringField;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
+    procedure QryMainCalcFields(DataSet: TDataSet);
   private
     { Private declarations }
   protected
@@ -53,6 +57,14 @@ procedure TFrmFuncionarios3.FormDestroy(Sender: TObject);
 begin
   inherited;
   QryCargos.Close;
+end;
+
+procedure TFrmFuncionarios3.QryMainCalcFields(DataSet: TDataSet);
+begin
+  inherited;
+  QryMainAtivoDesc.AsString := 'Não';
+  if QryMainATIVO.AsInteger = 1 then
+    QryMainAtivoDesc.AsString := 'Sim';
 end;
 
 function TFrmFuncionarios3.Validado: Boolean;
