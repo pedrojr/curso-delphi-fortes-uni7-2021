@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{C3BDDB86-FAA9-414E-90B1-988DC3225F67}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="generics\Generics.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="helpers\Helpers.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Generics">
+        <MSBuild Projects="generics\Generics.dproj"/>
+    </Target>
+    <Target Name="Generics:Clean">
+        <MSBuild Projects="generics\Generics.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Generics:Make">
+        <MSBuild Projects="generics\Generics.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Helpers">
+        <MSBuild Projects="helpers\Helpers.dproj"/>
+    </Target>
+    <Target Name="Helpers:Clean">
+        <MSBuild Projects="helpers\Helpers.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Helpers:Make">
+        <MSBuild Projects="helpers\Helpers.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Generics;Helpers"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Generics:Clean;Helpers:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Generics:Make;Helpers:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

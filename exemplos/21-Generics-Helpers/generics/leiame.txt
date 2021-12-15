@@ -1,0 +1,19 @@
+
+http://docwiki.embarcadero.com/Libraries/XE7/en/System.Generics.Collections
+
+Generics
+ TArray
+ TArrayManager
+ TDictionary
+ TEnumerable
+ TEnumerator
+ TList
+ TMoveArrayManager
+ TObjectDictionary
+ TObjectList
+ TObjectQueue
+ TObjectStack
+ TQueue
+ TStack
+ TThreadedQueue
+ TThreadList
